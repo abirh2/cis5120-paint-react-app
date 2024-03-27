@@ -20,9 +20,8 @@ function App() {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
   
-    // Correctly handle the event object provided by React
     const startDrawing = (event) => {
-      const { offsetX, offsetY } = event; // Access offsetX and offsetY directly
+      const { offsetX, offsetY } = event; 
       context.beginPath();
       context.moveTo(offsetX, offsetY);
       setIsDrawing(true);
@@ -30,7 +29,7 @@ function App() {
   
     const draw = (event) => {
       if (!isDrawing) return;
-      const { offsetX, offsetY } = event; // Access offsetX and offsetY directly
+      const { offsetX, offsetY } = event; 
       context.strokeStyle = lineColor;
       context.lineWidth = lineWidth;
       context.lineTo(offsetX, offsetY);
